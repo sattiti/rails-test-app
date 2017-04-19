@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+    %title=page_title(yield(:title))
+    =csrf_meta_tags
+    =stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    %header#header.navbar.navbar-fixed-top.navbar-inverse
+      .container
+        =render '/shared/header'
+
+    %main.container
+      %h1=yield(:title)
+      = yield
+
+    %footer#footer.container
+      =render '/shared/footer'
+
+    =debug(params) if Rails.env.development?
