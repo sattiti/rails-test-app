@@ -1,0 +1,6 @@
+-if o.kind_of?(ApplicationRecord)
+  -if o.errors.any?
+    .alert.alert-danger
+      %ul
+        -o.errors.full_messages.each do |err|
+          %li=err

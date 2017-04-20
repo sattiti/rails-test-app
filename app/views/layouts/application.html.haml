@@ -9,13 +9,19 @@
   %body
     %header#header.navbar.navbar-fixed-top.navbar-inverse
       .container
+        %p#logo=link_to page_title.gsub('|', '').strip!, root_path
         =render '/shared/header'
 
     %main.container
+      #flash.container
+        -flash.each do |msg_type, msg|
+          %p.alert{class: "alert-#{msg_type}"}=msg
+
       %h1=yield(:title)
       = yield
 
-    %footer#footer.container
-      =render '/shared/footer'
+    %footer#footer.clearfix
+      .container
+        =render '/shared/footer'
 
     =debug(params) if Rails.env.development?
