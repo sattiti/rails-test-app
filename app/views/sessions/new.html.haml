@@ -1,0 +1,18 @@
+:ruby
+  provide(:title, 'Login')
+
+.row
+  .col-md-6.col-md-offset-3
+    =form_for(:sessions, url: login_path) do |f|
+      =render '/shared/errors', {o: :sessions}
+      %p
+        =f.label :email, 'メールアドレス'
+        =f.email_field :email, class: 'form-control'
+      %p
+        =f.label :password, 'パスワード'
+        =f.password_field :password, class: 'form-control'
+      %p
+        =f.submit 'login', class: 'btn btn-primary'
+    %p.text-right
+      New User?
+      =link_to "Sign up now.", signup_path
