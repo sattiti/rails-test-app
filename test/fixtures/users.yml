@@ -3,9 +3,9 @@
 john:
   name: john
   email: john@example.com
-  # password_digest: <%= BCrypt::Password.create('foofoofoo') %>
+  password_digest: <%=User.digest('password') %>
 
-mary:
-  name: mary
-  email: mary@example.com
-  # password_digest: <%= BCrypt::Password.create('foofoofoo') %>
+# mary:
+#   name: mary
+#   email: mary@example.com
+#   # password_digest: <%= BCrypt::Password.create('foofoofoo') %>
