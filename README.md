@@ -5,7 +5,7 @@ application up and running.
 
 Things you may want to cover:
 * Rails version
-5.1.0
+5.1.1
 
 * Ruby version
 2.4.1
